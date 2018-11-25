@@ -1,6 +1,27 @@
-#ifndef MY_STACK_H
-#define MY_STACK_H
-#include<stdbool.h>
-void createstack(int s);
-void push(int item);
-#endif
+#include<stdio.h> 
+struct tNode 
+{ 
+
+   int data; 
+
+   struct tNode* left; 
+
+   struct tNode* right; 
+}; 
+struct sNode 
+{ 
+
+  struct tNode *t; 
+
+  struct sNode *next; 
+}; 
+
+/* Stack related functions */
+
+void push(struct sNode** top_ref, struct tNode *t); 
+
+struct tNode *pop(struct sNode** top_ref); 
+
+bool isEmpty(struct sNode *top); 
+
+  
